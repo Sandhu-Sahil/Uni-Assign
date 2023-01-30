@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Form Validation</title>
+        <script type = "text/javascript">
+            function validate() {
+                // if( document.myForm.CheckedGroup1.value == "" ) {
+                //     alert( "Please provide your language!" );
+                //     return false;
+                // }
+                if( document.myForm.Name.value == "" ) {
+                    alert( "Please provide your name!" );
+                    document.myForm.Name.focus() ;
+                    return false;
+                }
+                if( document.myForm.UserID.value == "" ) {
+                    alert( "Please provide your User ID!" );
+                    document.myForm.UserID.focus() ;
+                    return false;
+                }
+                if( document.myForm.UserID.value.length >= 12 ) {
+                    alert( "User ID is too long!" );
+                    document.myForm.UserID.focus() ;
+                    return false;
+                }
+                if( document.myForm.UserID.value.length < 5 ) {
+                    alert( "User ID is too short!" );
+                    document.myForm.UserID.focus() ;
+                    return false;
+                }
+                if( document.myForm.Password.value == "" ) {
+                    alert( "Please provide your Password" );
+                    document.myForm.Password.focus() ;
+                    return false;
+                }
+                if( document.myForm.Password.value.length >= 12 ) {
+                    alert( "Password is too long!" );
+                    document.myForm.Password.focus() ;
+                    return false;
+                }
+                if( document.myForm.Password.value.length < 7 ) {
+                    alert( "Password is too short!" );
+                    document.myForm.Password.focus() ;
+                    return false;
+                }
+                var name = document.myForm.Name.value;
+                var nameRGEX = /^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,}$/;
+                var nameResult = nameRGEX.test(name);
+                if(!nameResult){
+                    alert("Name only allowed alphabets")
+                    document.myForm.Name.focus() ;
+                    return false
+                }
+                if( document.myForm.EMail.value == "" ) {
+                    alert( "Please provide your Email!" );
+                    document.myForm.EMail.focus() ;
+                    return false;
+                }
+                if( document.myForm.Zip.value == "" || isNaN(
+                    document.myForm.Zip.value ) ||
+                    document.myForm.Zip.value.length <= 5 ) {
+                    alert( "Please provide a zip in the format ######." );
+                    document.myForm.Zip.focus() ;
+                    return false;
+                }
+                if( document.myForm.Country.value == "-1" ) {
+                    alert( "Please provide your country!" );
+                    return false;
+                }
+                return( true );
+            }
+        </script>
+    </head>
+    <body>
+        <form name = "myForm" onsubmit = "return(validate())">
+            <table cellspacing = "2" cellpadding = "2">
+                <tr>
+                    <td align = "right">User ID: </td>
+                    <td><input required type = "text" name = "UserID" /></td>
+                </tr>
+                <tr>
+                    <td align = "right">Password: </td>
+                    <td><input required type = "password" name = "Password" /></td>
+                </tr>
+                <tr>
+                    <td align = "right">Name: </td>
+                    <td><input required type = "text" name = "Name" size="60"/></td>
+                </tr>
+                <tr>
+                    <td align = "right">Address: </td>
+                    <td><input type = "text" name = "Address" size="60"/></td>
+                </tr>
+                <tr>
+                    <td align = "right">Country: </td>
+                    <td>
+                        <select required name = "Country">
+                            <option value = "-1" selected>(please select a country)</option>
+                            <option value = "1">USA</option>
+                            <option value = "2">UK</option>
+                            <option value = "2">CANADA</option>
+                            <option value = "3">INDIA</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align = "right">Zip Code: </td>
+                    <td><input required type = "number" name = "Zip" /></td>
+                </tr>
+                <tr>
+                    <td align = "right">E-mail: </td>
+                    <td><input required type = "email" name = "EMail" size="60"/></td>
+                </tr>
+                <tr>
+                    <td align="right">Sex: </td>
+                    <td>
+                        <label> 
+                            <input name="RadioGroup1" type="radio" value="M" checked> 
+                            male
+                        </label> 
+                        <label> 
+                            <input type="radio" name="RadioGroup1" value="F"> 
+                            female
+                        </label> 
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">Language: </td>
+                    <td>
+                        <label> 
+                            <input name="CheckedGroup1" type="checkbox" value="E"> 
+                            English
+                        </label> 
+                        <label> 
+                            <input type="checkbox" name="CheckedGroup1" value="NE"> 
+                            Non-English
+                        </label> 
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">About: </td>
+                    <td>
+                        <textarea cols="50" rows="6"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td align = "right"></td>
+                    <td><input type = "submit" value = "Submit" /></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
