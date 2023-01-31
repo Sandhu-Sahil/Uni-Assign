@@ -17,3 +17,6 @@ int main()
     towerOfHanoi(N, 'A', 'C', 'B');
     return 0;
 }
+
+// Time complexity of this is exponential O(2^N) [as everytime two further functions are called]
+// space complexity is O(N)
