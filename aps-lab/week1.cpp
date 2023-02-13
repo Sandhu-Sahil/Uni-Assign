@@ -337,9 +337,9 @@ void lPartAss(int arr[], int size){
 
 int main()
 {
-    char order = 'd'; // ascending 'a' decending 'd'
+    char order = 'a'; // ascending 'a' decending 'd'
 
-    int arrB[] = { 5, 1, 4, 2, 8};
+    int arrB[] = { 1,2,3,4,5,6 };
     int N = sizeof(arrB) / sizeof(arrB[0]);
     bubbleSort(order, arrB, N);
     cout << "Bubble Sort Swaps: "<<swapCount<<endl;
@@ -349,7 +349,7 @@ int main()
 
     swapCount = 0;
     compCount = 0;
-    int arrS[] = { 5, 1, 4, 2, 8};
+    int arrS[] = { 1,2,3,4,5,6 };
     N = sizeof(arrS) / sizeof(arrS[0]);
     selectionSort(order, arrS, N);
     cout << "Selection Sort Swaps: "<<swapCount<<endl;
@@ -359,7 +359,7 @@ int main()
 
     swapCount = 0;
     compCount = 0;
-    int arrI[] = { 5, 1, 4, 2, 8};
+    int arrI[] = { 1,2,3,4,5,6 };
     N = sizeof(arrI) / sizeof(arrI[0]);
     insertionSort(order, arrI, N);
     cout << "Insertion Sort Swaps: "<<swapCount<<endl;
@@ -369,7 +369,7 @@ int main()
 
     swapCount = 0;
     compCount = 0;
-    int arrQ[] = { 5, 1, 4, 2, 8};
+    int arrQ[] = { 1,2,3,4,5,6 };
     N = sizeof(arrQ) / sizeof(arrQ[0]);
     quickSort(order, arrQ, 0, N - 1);
     cout << "Quick Sort Swaps: "<<swapCount<<endl;
@@ -379,7 +379,7 @@ int main()
 
     swapCount = 0;
     compCount = 0;
-    int arrM[] = { 5, 1, 4, 2, 8};
+    int arrM[] = { 1,2,3,4,5,6 };
     N = sizeof(arrM) / sizeof(arrM[0]);
     mergeSort(order, arrM, 0, N - 1);
     cout << "Merge Sort Swaps: "<<swapCount<<endl;

@@ -4,17 +4,21 @@ using namespace std;
 int findElement(int arr[], int pviot){
     if (pviot%2 == 0){
         if (arr[pviot + 1] == arr[pviot]){
-            findElement(arr, 3*pviot/2);
+            int toReturn = findElement(arr, 3*pviot/2);
+            return toReturn;
         } else if (arr[pviot - 1] == arr[pviot]){
-            findElement(arr, pviot/2);
+            int toReturn = findElement(arr, pviot/2);
+            return toReturn;
         }else{
             return pviot;
         }
     }else{
         if (arr[pviot + 1] == arr[pviot]){
-            findElement(arr, pviot/2);
+            int toReturn = findElement(arr, pviot/2);
+            return toReturn;
         } else if (arr[pviot - 1] == arr[pviot]){
-            findElement(arr, 3*pviot/2);
+            int toReturn = findElement(arr, 3*pviot/2);
+            return toReturn;
         }else{
             return pviot;
         }
